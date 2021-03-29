@@ -61,7 +61,14 @@
                             <outlet property="delegate" destination="81L-Yh-Hak" id="l7U-gF-tf0"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Meus Snippets" id="9K7-Ju-K1q"/>
+                    <navigationItem key="navigationItem" title="Meus Snippets" id="9K7-Ju-K1q">
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="HYl-md-K4K">
+                            <connections>
+                                <action selector="addSnippet:" destination="81L-Yh-Hak" id="0dd-si-8Mg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3O3-es-3N1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -98,6 +105,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -26,6 +26,15 @@ class MasterTableViewController: UITableViewController {
         
     }
     
+    @IBAction func addSnippet(_ sender: Any) {
+        let number = self.snippets.count + 1
+        self.snippets.append(Snippet(name: "Snippet \(number)", content: "print(\" hello from snippets \(number) \")"))
+        
+        self.tableView.beginUpdates()
+        self.tableView.insertRows(at: [IndexPath.init(row: self.snippets.count - 1, section: 0)], with: .automatic)
+        self.tableView.endUpdates()
+    }
+    
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,6 +54,8 @@ class MasterTableViewController: UITableViewController {
         if let detailViewController = delegate as? DetailViewController {
           splitViewController?.showDetailViewController(detailViewController, sender: nil)
         }
+        
+        tableView.deselectRow(at: indexPath, animated: false)
     }
     
 }
