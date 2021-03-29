@@ -18,7 +18,8 @@ class MasterTableViewController: UITableViewController {
     var snippets: [Snippet] = [
         Snippet(name: "Snippet 1", content: "let x = 10"),
         Snippet(name: "Snippet 2", content: "let y = true"),
-        Snippet(name: "Snippet 3", content: "let z = \"abc\"")
+        Snippet(name: "Snippet 3", content: "let z = \"abc\""),
+        Snippet(name: "Snippet python", content: "and or let defer")
     ]
     
     override func viewDidLoad() {
