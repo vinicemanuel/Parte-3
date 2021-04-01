@@ -13,6 +13,12 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var syntaxTextView: SyntaxTextView!
     @IBOutlet weak var rightButton: UIBarButtonItem!
     
+    var snippet: Snippet? {
+        didSet {
+            refreshUI()
+        }
+    }
+    
     private var currentIsSwift = true
     
     var sourceCodeTheme: SourceCodeTheme {
@@ -64,12 +70,6 @@ class DetailViewController: UIViewController {
         let string = String(value)
         syntaxTextView.insertText(string)
         UIDevice.current.playInputClick()
-    }
-    
-    var snippet: Snippet? {
-        didSet {
-            refreshUI()
-        }
     }
 
     private func refreshUI() {

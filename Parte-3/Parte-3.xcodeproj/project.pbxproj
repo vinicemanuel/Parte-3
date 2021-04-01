@@ -20,6 +20,7 @@
 		093FCA5C260FB4AB00E578A2 /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093FCA58260FB4AB00E578A2 /* Themes.swift */; };
 		093FCA5D260FB4AB00E578A2 /* CodeFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093FCA59260FB4AB00E578A2 /* CodeFont.swift */; };
 		093FCA60260FB4BA00E578A2 /* Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093FCA5F260FB4BA00E578A2 /* Snippet.swift */; };
+		09467A99261547CA00937259 /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09467A98261547CA00937259 /* TagViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		093FCA58260FB4AB00E578A2 /* Themes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
 		093FCA59260FB4AB00E578A2 /* CodeFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeFont.swift; sourceTree = "<group>"; };
 		093FCA5F260FB4BA00E578A2 /* Snippet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snippet.swift; sourceTree = "<group>"; };
+		09467A98261547CA00937259 /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0931737F26152E7600A99237 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				093FCA5F260FB4BA00E578A2 /* Snippet.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		093FCA20260FB1DD00E578A2 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +80,7 @@
 		093FCA2B260FB1DD00E578A2 /* Parte-3 */ = {
 			isa = PBXGroup;
 			children = (
+				0931737F26152E7600A99237 /* Entities */,
 				093FCA55260FB4AB00E578A2 /* Utils */,
 				093FCA51260FB3F300E578A2 /* ViewControllers */,
 				093FCA2C260FB1DD00E578A2 /* AppDelegate.swift */,
@@ -78,7 +89,6 @@
 				093FCA35260FB1E000E578A2 /* Assets.xcassets */,
 				093FCA37260FB1E000E578A2 /* LaunchScreen.storyboard */,
 				093FCA3A260FB1E000E578A2 /* Info.plist */,
-				093FCA5F260FB4BA00E578A2 /* Snippet.swift */,
 			);
 			path = "Parte-3";
 			sourceTree = "<group>";
@@ -88,6 +98,7 @@
 			children = (
 				093FCA47260FB26600E578A2 /* MasterTableViewController.swift */,
 				093FCA4A260FB30F00E578A2 /* DetailViewController.swift */,
+				09467A98261547CA00937259 /* TagViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -186,6 +197,7 @@
 				093FCA5D260FB4AB00E578A2 /* CodeFont.swift in Sources */,
 				093FCA5B260FB4AB00E578A2 /* EditableToolbarView.swift in Sources */,
 				093FCA2F260FB1DD00E578A2 /* SceneDelegate.swift in Sources */,
+				09467A99261547CA00937259 /* TagViewController.swift in Sources */,
 				093FCA4B260FB30F00E578A2 /* DetailViewController.swift in Sources */,
 				093FCA5A260FB4AB00E578A2 /* UIApplication+activeTraitCollection.swift in Sources */,
 			);
