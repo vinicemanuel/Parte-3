@@ -27,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let firstSnippet = masterViewController.snippets.first
         detailViewController.snippet = firstSnippet
         tagViewController.snippet = firstSnippet
-        masterViewController.delegateDetail = detailViewController
+        tagViewController.delegateDetail = detailViewController
         masterViewController.delegateTag = tagViewController
         
         guard let _ = (scene as? UIWindowScene) else { return }

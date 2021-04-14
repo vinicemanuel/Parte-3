@@ -13,14 +13,13 @@ protocol SnippetSelectionDelegate: AnyObject {
 
 class MasterTableViewController: UITableViewController {
     
-    weak var delegateDetail: SnippetSelectionDelegate?
     weak var delegateTag: SnippetSelectionDelegate?
     
     var snippets: [Snippet] = [
         Snippet(name: "Snippet 1", content: "let x = 10", tags: ["tag 1", "tag 2", "tag 3"]),
         Snippet(name: "Snippet 2", content: "let y = true", tags: ["tag 4", "tag 5", "tag 6"]),
         Snippet(name: "Snippet 3", content: "let z = \"abc\"",tags: ["tag 7", "tag 8", "tag 9"]),
-        Snippet(name: "Snippet python", content: "and or let defer")
+        Snippet(name: "Snippet python", content: "and or let defer", tags: ["tag 10"])
     ]
     
     override func viewDidLoad() {
@@ -51,11 +50,10 @@ class MasterTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedSnippet = snippets[indexPath.row]
-        delegateDetail?.snippetSelected(selectedSnippet)
         delegateTag?.snippetSelected(selectedSnippet)
         
-        if let detailViewController = delegateDetail as? DetailViewController {
-          splitViewController?.showDetailViewController(detailViewController, sender: nil)
+        if let tagViewController = delegateTag as? TagViewController {
+            splitViewController?.show(tagViewController, sender: nil)
         }
         
         tableView.deselectRow(at: indexPath, animated: false)

@@ -8,19 +8,22 @@
 import UIKit
 
 class TagViewController: UIViewController {
+    
+    weak var delegateDetail: SnippetSelectionDelegate?
 
     @IBOutlet weak var tableView: UITableView!
     
-    var snippet: Snippet? = nil
+    var snippet: Snippet!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self
+        self.tableView.delegate = self
     }
     
 }
 
-extension TagViewController: UITableViewDataSource {
+extension TagViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
@@ -31,6 +34,17 @@ extension TagViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.snippet?.tags.count ?? 0
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        delegateDetail?.snippetSelected(snippet)
+        
+        if let detailViewController = delegateDetail as? DetailViewController {
+            splitViewController?.showDetailViewController(detailViewController, sender: nil)
+        }
+    }
+    
 }
 
 extension TagViewController: SnippetSelectionDelegate {
